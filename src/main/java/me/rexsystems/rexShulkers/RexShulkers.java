@@ -7,11 +7,14 @@ import me.rexsystems.rexShulkers.listener.ShulkerListener;
 import me.rexsystems.rexShulkers.papi.RexShulkersPlaceholders;
 import me.rexsystems.rexShulkers.storage.ShulkerRepository;
 import org.bukkit.command.PluginCommand;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
 public final class RexShulkers extends JavaPlugin {
+
+    private static final int BSTATS_PLUGIN_ID = 35268;
 
     private ConfigManager configManager;
     private ShulkerService shulkers;
@@ -46,6 +49,7 @@ public final class RexShulkers extends JavaPlugin {
             getLogger().info("PlaceholderAPI expansion registered.");
         }
 
+        new Metrics(this, BSTATS_PLUGIN_ID);
         getLogger().info("RexShulkers enabled. Storage: " + configManager.databaseName());
     }
 
