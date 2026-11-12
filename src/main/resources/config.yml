@@ -1,0 +1,101 @@
+# RexShulkers configuration
+# Messages accept MiniMessage, legacy & codes, &#RRGGBB, and #RRGGBB.
+# Inserted names are literal. Color belongs in the template.
+# Reload updates this file. It does not delete plugins/RexShulkers/shulkers.db.
+
+config-version: 1
+
+settings:
+  # Seconds after a close before the same player can open again. 0 disables it.
+  # rexshulkers.admin skips this wait.
+  cooldown-seconds: 3
+  # When true, the item's vanilla block inventory is cleared so the tooltip stays empty.
+  # Contents stay in shulkers.db either way. They are never written onto the item.
+  obfuscate: true
+
+worlds:
+  # If this list is not empty, shulkers open only in these worlds.
+  enabled: []
+  disabled: []
+
+# Material names. A click that would put one of these into the shulker GUI is cancelled.
+# Other clicks are left alone. Shulker boxes are listed so a portable shulker cannot be nested.
+blacklist:
+  - BEDROCK
+  - BARRIER
+  - COMMAND_BLOCK
+  - CHAIN_COMMAND_BLOCK
+  - REPEATING_COMMAND_BLOCK
+  - COMMAND_BLOCK_MINECART
+  - STRUCTURE_BLOCK
+  - STRUCTURE_VOID
+  - JIGSAW
+  - SHULKER_BOX
+  - WHITE_SHULKER_BOX
+  - ORANGE_SHULKER_BOX
+  - MAGENTA_SHULKER_BOX
+  - LIGHT_BLUE_SHULKER_BOX
+  - YELLOW_SHULKER_BOX
+  - LIME_SHULKER_BOX
+  - PINK_SHULKER_BOX
+  - GRAY_SHULKER_BOX
+  - LIGHT_GRAY_SHULKER_BOX
+  - CYAN_SHULKER_BOX
+  - PURPLE_SHULKER_BOX
+  - BLUE_SHULKER_BOX
+  - BROWN_SHULKER_BOX
+  - GREEN_SHULKER_BOX
+  - RED_SHULKER_BOX
+  - BLACK_SHULKER_BOX
+
+item:
+  name: "<white>Shulker"
+  lore:
+    - "<gray>Right-click to open"
+
+gui:
+  title: "<white>Shulker"
+  # Inventory rows. 3 rows is 27 slots, the size of a shulker. Clamped from 1 to 6.
+  rows: 3
+
+sounds:
+  open:
+    enabled: true
+    sound: minecraft:block.shulker_box.open
+    volume: 1.0
+    pitch: 1.0
+  close:
+    enabled: true
+    sound: minecraft:block.shulker_box.close
+    volume: 1.0
+    pitch: 1.0
+
+messages:
+  prefix: "<gray>[<#f75634>RexShulkers<gray>] "
+  no-permission: "{prefix}<red>You do not have permission to do that."
+  players-only: "{prefix}<red>Only players can do that."
+  reload: "{prefix}<green>Configuration reloaded."
+  help-header: "{prefix}<white>RexShulkers <dark_gray>(<white>/rsh<dark_gray>, <white>/shulker<dark_gray>)"
+  help:
+    - "<gray>/rexshulkers help <dark_gray>- <white>Show this help"
+    - "<gray>/rexshulkers open <dark_gray>- <white>Open the shulker in your hand"
+    - "<gray>/rexshulkers give <player> [amount] <dark_gray>- <white>Give a new empty shulker"
+    - "<gray>/rexshulkers clear <dark_gray>- <white>Strip the storage id from the held shulker"
+    - "<gray>/rexshulkers reload <dark_gray>- <white>Reload the configuration"
+  give-usage: "{prefix}<gray>Usage: <white>/rexshulkers give <player> [amount]"
+  unknown-player: "{prefix}<red>That player is not online."
+  invalid-amount: "{prefix}<red>Amount must be a whole number from 1 to 64."
+  given: "{prefix}<gray>Gave <white>{amount} <gray>shulker(s) to <white>{player}<gray>."
+  received: "{prefix}<gray>You received <white>{amount} <gray>shulker(s)."
+  dropped: "{prefix}<gray>Their inventory was full, so <white>{dropped} <gray>shulker(s) dropped at their feet."
+  clear-done: "{prefix}<gray>Removed the storage id from the item in your hand."
+  clear-missing: "{prefix}<red>Hold a RexShulkers shulker."
+  clear-open: "{prefix}<red>Close that shulker before clearing it."
+  not-holding: "{prefix}<red>Hold a RexShulkers shulker."
+  already-open: "{prefix}<red>That shulker is already open."
+  cooldown: "{prefix}<red>Wait <white>{seconds}s <red>before opening another shulker."
+  world-denied: "{prefix}<red>Shulkers cannot be opened in this world."
+  blacklisted: "{prefix}<red>You cannot put that item in a shulker."
+  locked: "{prefix}<red>You cannot move that shulker while it is open."
+  storage-error: "{prefix}<red>That shulker could not be read. It was not opened."
+  slots-too-small: "{prefix}<red>This shulker was saved with <white>{saved} <red>slots and the GUI has <white>{slots}<red>. Raise gui.rows before opening it."

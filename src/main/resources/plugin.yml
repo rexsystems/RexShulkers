@@ -1,0 +1,32 @@
+name: RexShulkers
+version: '${project.version}'
+main: me.rexsystems.rexShulkers.RexShulkers
+api-version: '1.21'
+folia-supported: true
+authors: [RexSystems]
+description: Portable shulkers stored in SQLite
+website: https://rexsystems.me
+softdepend: [PlaceholderAPI]
+
+commands:
+  rexshulkers:
+    description: Open and manage portable shulkers
+    aliases: [rsh, shulker]
+    usage: /rexshulkers <help|open|give|clear|reload>
+
+permissions:
+  rexshulkers.use:
+    description: Open a shulker from your hand
+    default: true
+  rexshulkers.give:
+    description: Give a new empty shulker
+    default: op
+  rexshulkers.clear:
+    description: Strip the storage id from the held shulker
+    default: op
+  rexshulkers.reload:
+    description: Reload RexShulkers
+    default: op
+  rexshulkers.admin:
+    description: Open a shulker without the cooldown
+    default: op
