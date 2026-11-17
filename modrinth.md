@@ -36,4 +36,4 @@ Aliases: `/rsh`, `/shulker`
 | `rexshulkers.reload` | op | Reload the configuration |
 | `rexshulkers.admin` | op | Open a shulker without the cooldown |
 
-Documentation: https://rexsystems.me/docs/rexshulkers
+Documentation: https://docs.rexsystems.me/rexshulkers/

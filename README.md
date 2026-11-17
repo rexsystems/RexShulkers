@@ -47,7 +47,7 @@ Aliases: `/rsh`, `/shulker`
 
 The pages in [docs/](docs/index.md) drop into a Starlight site at `src/content/docs/rexshulkers/`. Paste `docs/sidebar.mjs` into the site sidebar.
 
-Full docs: [https://rexsystems.me/docs/rexshulkers](https://rexsystems.me/docs/rexshulkers)
+Full docs: [https://docs.rexsystems.me/rexshulkers/](https://docs.rexsystems.me/rexshulkers/)
 
 ## License
 
